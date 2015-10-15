@@ -49,3 +49,27 @@
       see http://www.w3schools.com/tags/tag_select.asp. Use the same .value
       property to get the value attribute of the currently-selected <option>
 */
+
+document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    var button = document.getElementById('equals-button');
+    button.addEventListener('click', function() {
+        var one = parseInt(document.getElementById('value-1').value);
+        var two = parseInt(document.getElementById('value-2').value);
+        var res = one + two;
+        if (isNaN(res)) {
+            document.getElementById('error-message').textContent = "Invalid input! Please enter two numbers.";
+            document.getElementById('error-message').style.display = 'block';
+        } else {
+            document.getElementById('error-message').style.display = 'none';
+            document.getElementById('result').textContent = res;
+        }
+    })
+})
+
+
+
+
+
+
